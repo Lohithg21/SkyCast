@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyCast</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="loadingScreen" class="text-center loading-div">
+      <div class="spinner-grow" style="width: 3rem; height: 3rem" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="header">
+      <h1>🌤 SkyCast</h1>
+    </div>
+
+    <div class="container">
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name..." />
+        <button onclick="getWeather()" style="border-radius: 50px;">Search</button>
+      </div>
+
+      <p id="error"></p>
+
+      <div id="result">
+        <span id="weatherIcon">🌡</span>
+        <p id="cityName"></p>
+        <p id="condition"></p>
+
+        <div class="temp-box" id="tempDisplay">--</div>
+
+        <div class="unit-row">
+          <button class="toggle-btn active" id="btnC" onclick="switchUnit('C')">
+            °C
+          </button>
+          <button class="toggle-btn" id="btnF" onclick="switchUnit('F')">
+            °F
+          </button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">💧 Humidity<span id="humidity">--</span></div>
+          <div class="stat">🌬 Wind<span id="wind">--</span></div>
+          <div class="stat">👁 Visibility<span id="visibility">--</span></div>
+          <div class="stat">🌡 Feels Like<span id="feelsLike">--</span></div>
+        </div>
+
+        <button class="forecast-btn" onclick="toggleForecast()">
+          📅 5-Day Forecast
+        </button>
+
+        <div
+          id="forecastSection"
+          style="display: none; width: 100%; margin-top: 16px"
+        >
+          <div id="forecastCards" class="forecast-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 SkyCast - Built by Lohith</p>
+      <p>Powered by OpenWeatherMap API</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
